@@ -8,8 +8,8 @@ to find flare up patterns.
 In development — V1 in progress
 
 ## Tech Stack
-- React Native / Expo
-- SQLite (local storage)
+- React
+- IndexedDB (local storage)
 
 ## Planned Features
 - Symptom logging (fatigue, brain fog, mood, etc.)
