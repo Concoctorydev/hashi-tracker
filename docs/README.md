@@ -1,0 +1,1 @@
+# Hashimoto app technical documentation 
