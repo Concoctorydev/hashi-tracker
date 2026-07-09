@@ -192,6 +192,10 @@ footer nav {
     font-size: 1.25rem;
 }
 
+.form-intro {
+    text-align: center;
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 480px) {
