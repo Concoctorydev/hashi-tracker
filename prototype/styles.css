@@ -102,6 +102,9 @@ a:visited {
     padding: 4rem 2rem;
     overflow-y: auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 header {
@@ -118,11 +121,14 @@ main {
     margin-bottom: 2rem;
 }
 
+main p {
+    margin-bottom: 7rem;
+}
+
 footer {
     display: flex;
     flex-direction: column;
     gap: 0.05rem;
-    margin-top: auto;
     font-size: 0.75rem;
 }
 
@@ -137,6 +143,7 @@ footer nav {
 .btn {
     display: inline-block;
     text-align: center;
+    text-decoration: none;
     padding: 1rem 2rem;
     border-radius: 999px;
     font-weight: bold;
