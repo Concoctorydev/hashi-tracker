@@ -104,7 +104,6 @@ a:visited {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 header {
@@ -122,7 +121,8 @@ main {
 }
 
 main p {
-    margin-bottom: 7rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 
 form {
@@ -147,12 +147,12 @@ form .btn {
     margin-bottom: 2rem;
 }
 
-
 footer {
     display: flex;
     flex-direction: column;
     gap: 0.05rem;
     font-size: 0.75rem;
+    margin-top: auto;
 }
 
 footer nav {
@@ -195,6 +195,7 @@ footer nav {
 .form-intro {
     text-align: center;
 }
+
 
 /* MEDIA QUERIES */
 

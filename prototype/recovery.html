@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hashi Tracker Prototype</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="page-background">
         <div class="page-content">
-            <h1>Account recovery</h1>
-            <p></p>
+            <header>
+                <h2>Account recovery</h2>
+            </header>
+            <main>
+                <form>
+                    <p class="form-intro">Forgot your password? No worries, let's reset it now.</p>
+                    <label for="username">Enter username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username here">
+                    <label for="recovery-key">Enter recovery key</label>
+                    <input type="text" id="recovery-key" name="recovery-key" placeholder="e.g.23438r9eufiejf8w3yur80">
+                    <button class="btn">Submit</button>
+                </form>
+                <p>Remember your password? <a href="login.html">Log in here</a></p>
+            </main>
         </div>
     </div>
 </body>
-
 </html>
