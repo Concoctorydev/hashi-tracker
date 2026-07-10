@@ -104,7 +104,7 @@ a:visited {
 .page-content {
     background-color: #f2e8d6;
     border: 3px solid #d69fab;
-    border-radius: 12px 12px 0 0;
+    border-radius: 12px;
     max-width: 400px;
     width: 100%;
     aspect-ratio: 9 / 19.5;
