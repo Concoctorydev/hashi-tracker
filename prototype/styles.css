@@ -156,6 +156,26 @@ form .btn {
     margin-bottom: 2rem;
 }
 
+.details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: left;
+    margin-top: 0.75rem;
+}
+
+.details-content select {
+    padding: 0.3rem;
+}
+
+.field-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
 footer {
     display: flex;
     flex-direction: column;
