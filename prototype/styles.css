@@ -209,6 +209,24 @@ footer nav {
     margin-top: auto;
 }
 
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: #393939;
+}
+
+.nav-item:visited {
+    color: #393939;
+}
+
+.nav-item img {
+    width: 32px;
+    height: 32px;
+}
+
 /* CUSTOMIZED REUSABLE COMPONENTS */
 
 .btn {
