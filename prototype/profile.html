@@ -7,14 +7,77 @@
     <title>Hashi Tracker Prototype</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="page-background">
         <div class="page-content">
-            <h1>Profile</h1>
-            <p></p>
+            <header>
+                <h1>Profile</h1>
+            </header>
+            <main>
+                <form>
+                    <details>
+                        <summary>Change username</summary>
+                        <div class="details-content">
+                            <div class="field-row">
+                                <label for="current-username">Current username</label>
+                                <input type="text" id="current-username" name="current-username" placeholder="Enter current username">
+                            </div>
+                            <div class="field-row">
+                                <label for="desired-username">Desired username</label>
+                                <input type="text" id="desired-username" name="desired-username" placeholder="Enter desired username">
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Change password</summary>
+                        <div class="details-content">
+                            <div class="field-row">
+                                <label for="current-password">Current password</label>
+                                <input type="password" id="current-password" name="current-password" placeholder="Enter current password">
+                            </div>
+                            <div class="field-row">
+                                <label for="desired-password">Desired password</label>
+                                <input type="password" id="desired-password" name="desired-password" placeholder="Enter desired password">
+                            </div>
+                            <div class="field-row">
+                                <label for="repeat-desired-password">Repeat password</label>
+                                <input type="password" id="repeat-desired-password" name="repeat-desired-password" placeholder="Repeat desired password">
+                            </div>
+                        </div>
+                    </details>
+                    <button type="submit" class="btn">Save</button>
+                </form>
+                <a href="login.html" class="btn">Log out</a>
+                <button type="button" class="btn delete-account" disabled>
+                        Delete account
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1a5 5 0 00-5 5v3H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V11a2 2 0 00-2-2h-2V6a5 5 0 00-5-5zm3 8H9V6a3 3 0 016 0v3z"/>
+                        </svg>
+                    </button>
+            </main>
+            <nav class="bottom-nav">
+                <a href="home.html" class="nav-item">
+                    <img src="home.svg" alt="Home icon">
+                    <span>Home</span>
+                </a>
+                <a href="trends.html" class="nav-item">
+                    <img src="trends.svg" alt="Trends icon">
+                    <span>Trends</span>
+                </a>
+                <a href="history.html" class="nav-item">
+                    <img src="history.svg" alt="History icon">
+                    <span>History</span>
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <img src="profile.svg" alt="Profile icon">
+                    <span>Profile</span>
+                </a>
+                <a href="help.html" class="nav-item">
+                    <img src="help.svg" alt="Help icon">
+                    <span>Help</span>
+                </a>
+            </nav>
         </div>
     </div>
 </body>
-
 </html>

@@ -286,6 +286,11 @@ footer nav {
     gap: 0.75rem;
 }
 
+.delete-account {
+    background-color: crimson;
+    color:#f2e8d6;
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 480px) {
