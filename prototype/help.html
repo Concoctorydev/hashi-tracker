@@ -1,20 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hashi Tracker Prototype</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="page-background">
         <div class="page-content">
+        <header>
             <h1>Help</h1>
-            <p></p>
+        </header>
+        <main>
+            <p>Got questions or comments? Want to throw tomatoes at us? 
+                Hit us up below, or take a look and see if we can answer your question here.
+            </p>
+            <form>
+                <details>
+                    <summary>FAQ</summary>
+                        <div class="details-content">
+                            <div class="field-column">
+                                <details>
+                                    <summary>Is my health data private and secure?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>Your secrets are safe with... well, just you, actually. Your data lives 
+                                                    only on your device, never shared with anyone. It's your business, and your 
+                                                    business alone.</p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>Can I export or back up my data?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>Not yet! A shiny new data export feature is coming, so eventually you will
+                                                    be able to download and back your data. For now, a a cautionary word of advice;
+                                                    clearing your browser history, cache, cookies, or site storage will send your logs to the great digital 
+                                                    void, never to return. So maybe don't do that.</p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>What happens to my data if I delete my account?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>Deleting your account wipes all your logged data from your device; 
+                                                    for-e-ver. There's no undo button, no takesies backsies, no digital séance to 
+                                                    summon it from the beyond.</p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>How does the app identify patterns or triggers?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>HashiTracker uses a bunch of magic (math and science) behind the scenes to play digital detective
+                                                    with your logged entries to see connections. Maybe your flareups have a suspicious habit 
+                                                    of showing up after that third cup of coffee or a rough night's sleep. 
+                                                    Case (potentially) solved!</p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>What if I forget to log a day?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>No guilt trips here! Life happens and the last thing you want is a scolding from us. Just pick
+                                                    back up when you can, missing a few days here and there won't break anything. 
+                                                </p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>Can I edit or delete a past entry?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>Not yet, but a future update will allow you to delete the evidence.</p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>Do I have to fill out every section each day?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>Nah, just enter what applies to you, whenever it applies.</p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>What if a symptom or medication I need isn't listed?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>The current list covers common symptoms and medications, but everyone's afflictions and daily 
+                                                    concoctions are different. We're brewing up a future version, with fields for custom entry.</p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>Can I use HashiTracker on multiple devices?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>Right now your data's a homebody, so it only stays on one device. Multi-device 
+                                                    sync is coming in a future update.</p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>How do I reset my password if I lost my recovery key?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>There's no one else who has a copy of your password; your 
+                                                    recovery key is it. Guard it like treasure, or your account drifts 
+                                                    off into the digital void, gone for good.</p>
+                                            </div>
+                                        </div>
+                                </details>
+                                <details>
+                                    <summary>Is this a substitute for medical advice?</summary>
+                                        <div class="details-content">
+                                            <div class="faq-p">
+                                                <p>Nope. HashiTracker did not go to medical school. It's more like a 
+                                                    digital notebook, so you can go to your doctor with receipts instead of vibes.</p>
+                                            </div>
+                                        </div>
+                                </details>
+                            </div>
+                        </div>
+                </details>
+                <details>
+                    <summary>Terms of service</summary>
+                        <div class="details-content">
+                            <div class="field-column">
+                                <h2>Terms of Service</h2>
+                                    <div class="faq-p">
+                                        <p>Last updated: July 11, 2026</p>
+                                    </div>
+                                    <div class="faq-p">
+                                        <p>Welcome to HashiTracker, a symptom-tracking app developed by Concoctory. 
+                                        By using this app, you agree to the following terms.</p>
+                                    </div>
+                                <h3>1. What HashiTracker Is</h3>
+                                    <div class="faq-p">
+                                        <p>HashiTracker is a personal tracking tool designed to help you log symptoms, 
+                                        lifestyle factors, diet, and medications related to Hashimoto's thyroiditis. 
+                                        It is not a medical device, diagnostic tool, or substitute for professional 
+                                        medical advice.</p>
+                                    </div>
+                                <h3>2. Your Data</h3>
+                                    <div class="faq-p">
+                                        <p>All data you enter is stored locally on your own device. Concoctory does 
+                                        not collect, store, or have access to your health data.</p>
+                                    </div>
+                                <h3>3. No Medical Advice</h3>
+                                    <div class="faq-p">
+                                        <p>HashiTracker does not provide medical advice, diagnosis, or treatment. 
+                                        Always consult a qualified healthcare provider regarding your health.</p>
+                                    </div>
+                                <h3>4. Use At Your Own Risk</h3>
+                                    <div class="faq-p">
+                                        <p>This app is provided "as is," without warranties of any kind. Concoctory 
+                                        is not liable for any damages or health outcomes resulting from your use 
+                                        of this app.</p>
+                                    </div>
+                                <h3>5. Changes to These Terms</h3>
+                                    <div class="faq-p">
+                                        <p>These terms may be updated from time to time. Continued use of the app 
+                                        after changes means you accept the updated terms.</p>
+                                    </div>
+                            </div>
+                        </div>
+                </details>
+                <details>
+                    <summary>Privacy policy</summary>
+                        <div class="details-content">
+                            <div class="field-column">
+                                <h2>Privacy Policy</h2>
+                                    <div class="faq-p">
+                                        <p>Last updated: July 11, 2026</p>
+                                    </div>
+                                    <div class="faq-p">
+                                        <p>This Privacy Policy explains how HashiTracker, developed by Concoctory, 
+                                            handles your information.</p>
+                                    </div>
+                                <h3>1. Your Data Stays With You</h3>
+                                    <div class="faq-p">
+                                        <p>HashiTracker stores all your logged data locally on your own device. 
+                                            Concoctory does not collect, transmit, or have access to any health data 
+                                            you enter into the app.</p>
+                                    </div>
+                                <h3>2. No Third-Party Sharing</h3>
+                                    <div class="faq-p">
+                                        <p>Since your data never leaves your device, it is never sold, shared, or 
+                                            transmitted to third parties.</p>
+                                    </div>
+                                <h3>3. Account Information</h3>
+                                    <div class="faq-p">
+                                        <p>Your username, password, and recovery key are stored locally on your 
+                                            device. Concoctory does not have access to this information and cannot 
+                                            recover it on your behalf.</p>
+                                    </div>
+                                <h3>4. Data Deletion</h3>
+                                    <div class="faq-p">
+                                        <p>You can delete your account and all associated data at any time through 
+                                            the Profile page. This action is permanent and cannot be undone.</p>
+                                    </div>
+                                <h3>5. Changes to This Policy</h3>
+                                    <div class="faq-p">
+                                        <p>This policy may be updated as HashiTracker evolves. Continued use of the 
+                                            app after changes means you accept the updated policy.</p>
+                                    </div>
+                            </div>
+                        </div>
+                </details>
+                <details>
+                    <summary>Contact us</summary>
+                        <div class="details-content">
+                            <div class="field-column">
+                                <div class="faq-p">
+                                    <p>Have a question, found a bug, or just want to say hi? Reach out:</p>
+                                </div>    
+                                <div class="faq-p">
+                                    <a href="mailto:circuitgeek@concoctory.com">circuitgeek@concoctory.com</a>
+                                </div>
+                            </div>
+                        </div>
+                </details>
+            </form>
+        </main>
+        <nav class="bottom-nav">
+                <a href="home.html" class="nav-item">
+                    <img src="home.svg" alt="Home icon">
+                    <span>Home</span>
+                </a>
+                <a href="trends.html" class="nav-item">
+                    <img src="trends.svg" alt="Trends icon">
+                    <span>Trends</span>
+                </a>
+                <a href="history.html" class="nav-item">
+                    <img src="history.svg" alt="History icon">
+                    <span>History</span>
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <img src="profile.svg" alt="Profile icon">
+                    <span>Profile</span>
+                </a>
+                <a href="help.html" class="nav-item">
+                    <img src="help.svg" alt="Help icon">
+                    <span>Help</span>
+                </a>
+            </nav>
         </div>
     </div>
 </body>
-
 </html>

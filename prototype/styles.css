@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .wordmark {
@@ -194,6 +194,15 @@ select {
     gap: 1rem;
 }
 
+.field-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-left: 2rem;
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -289,6 +298,10 @@ footer nav {
 .delete-account {
     background-color: crimson;
     color:#f2e8d6;
+}
+
+.faq-p p, a {
+    margin-top: 0.5rem;
 }
 
 /* MEDIA QUERIES */
