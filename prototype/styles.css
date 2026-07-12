@@ -306,8 +306,33 @@ footer nav {
 
 /* MEDIA QUERIES */
 
+/* MEDIA QUERIES */
+
 @media (max-width: 480px) {
+    .page-background {
+        padding: 2rem;
+    }
+
     .page-content {
-        padding: 1.5rem;
+        aspect-ratio: auto;
+        min-height: 90vh;
+    }
+
+
+    header {
+        padding: 2rem 1.5rem 0 1.5rem;
+    }
+
+    main {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .wordmark {
+        font-size: 2.2rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.85rem 1.5rem;
     }
 }
