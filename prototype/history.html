@@ -17,7 +17,7 @@
                 <form class="history-form">
                     <div class="field-row">
                         <input type="radio" id="days-from-current-radio" name="history-type" value="days-from-current">
-                        <label for="days-from-current-radio">Select days prior to current</label>
+                        <label for="days-from-current-radio">Select lookback period</label>
                     </div>
                     <select id="days-from-current-select" name="days-from-current">
                         <option value="7">7 days</option>
@@ -27,13 +27,18 @@
                         <option value="90">90 days</option>
                     </select>
 
-                    <p>OR</p>
+                    <div class="or-divider">
+                        <span>OR</span>
+                    </div>
 
                     <div class="field-row">
-                        <input type="radio" id="specific-date-radio" name="history-type" value="specific-date">
-                        <label for="specific-date-radio">Choose a specific date</label>
+                        <input type="radio" id="calendar-pick-radio" name="history-type" value="calendar-pick">
+                        <label for="calendar-pick-radio">Pick date(s) on calendar</label>
                     </div>
-                    <input type="date" id="specific-date-input" name="specific-date">
+                    <div id="calendar-picker-placeholder" class="calendar-picker-placeholder">
+                        <!-- calendar-based single/range picker goes here later -->
+                    </div>
+
                     <button class="btn">Show history</button>
                 </form>
             </main>
