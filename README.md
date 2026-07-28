@@ -1,15 +1,14 @@
 # Hashi Tracker
 
-A tracker for people managing Hashimoto's thyroiditis. This tracker allows 
-the user to log symptoms, lifestyle factors, diet, and medications in order 
-to find flare up patterns.
+A tracker for people managing Hashimoto's thyroiditis. This tracker allows the user to log symptoms, lifestyle factors, diet, and medications in order to find flare up patterns.
 
 ## Status
 In development — V1 in progress
 
 ## Tech Stack
-- React
-- IndexedDB (local storage)
+- HTML, CSS
+- Flask
+- SQLite
 
 ## Planned Features
 - Symptom logging (fatigue, brain fog, mood, etc.)
@@ -20,5 +19,4 @@ In development — V1 in progress
 - PDF report generation for provider visits
 
 ## Notes
-Local-first architecture — all data stays on the user's device for MVP.
-No cloud sync or backend required for V1.
+Data is stored securely on the server, not just the user's device — supports multi-device access. Account recovery uses email, not a local recovery key.
