@@ -286,6 +286,11 @@ footer nav {
     text-align: center;
 }
 
+.form-error {
+    color: crimson;
+    font-weight: bolder;
+}
+
 .history-form {
     text-align: left;
 }

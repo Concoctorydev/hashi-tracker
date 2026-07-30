@@ -13,10 +13,10 @@ def signup():
         repeat_password = request.form['repeat-password']
 
         if not email or not username or not password or not repeat_password:
-            return "All fields are required. Please go back and complete all fields."
+            return render_template('signup.html', error="All fields are required. Please go back and complete all fields.")
 
         if password != repeat_password:
-            return "Passwords do not match. Please go back and try again."
+            return render_template('signup.html', error="Passwords do not match. Please go back and try again.")
 
         password_hash = generate_password_hash(password, method='pbkdf2:sha256')
 
@@ -26,12 +26,12 @@ def signup():
         cursor.execute('SELECT id FROM users WHERE email = ?', (email,))
         if cursor.fetchone():
             conn.close()
-            return "That email is already registered. Please go back and try again."
+            return render_template('signup.html', error="That email is already registered. Please go back and try again.")
 
         cursor.execute('SELECT id FROM users WHERE username = ?', (username,))
         if cursor.fetchone():
             conn.close()
-            return "That username is already taken. Please go back and try again."
+            return render_template('signup.html', error="That username is already taken. Please go back and try again.")
 
         cursor.execute(
             'INSERT INTO users (email, username, password_hash) VALUES (?, ?, ?)',
