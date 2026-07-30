@@ -11,7 +11,7 @@
 | TC-05 | Empty required field(s)  | Leave one or more fields blank. Submit.                                                      | Form should not submit / validation error shown.                             |Form submission fails with empty input fields, validation error returns| ✅ Pass |
 | TC-06 | Password stored securely | Complete a successful signup. Inspect `hashitracker.db` directly.                            | `password_hash` column contains a hashed value, not the plain-text password. |Confirmed password_hash column in users table contains properly hashed values.Verified via DB Browser.| ✅ Pass |
 **Note:** While verifying password hashing via DB Browser, leftover test rows from TC-02 found with empty data fields. Cleared with 'DELETE FROM users;'.
-| TC-07 | Password complexity requirements.  |Enter a password shorter than 8 characters, longer than 14 characters or one with no numbers/no letters. Submit. |  Error message indicating password requirements not met.    |      | ⬜ Not Run |
+| TC-07 | Password complexity requirements.  |Enter a password shorter than 8 characters, longer than 14 characters or one with no numbers/no letters. Submit. | Error message indicating password requirements not met.    | Allowed user signup with password of any length, all numbers, and all letters.   | ❌ Fail |
 | TC-08 | SQL injection attempt | Enter ' OR '1'='1 (or similar) in email/username/password fields. Submit. | Input treated as literal text; no unexpected database behavior, no error exposing SQL. |      | ⬜ Not Run |
 | TC-09 | Special characters / unicode input | Enter emoji or symbols (🎉, @, #) in username. Then separately test accented/non-Latin characters (é, 名前). Submit each. | Emoji/symbols rejected with a validation error. Accented and non-Latin characters accepted and stored correctly. |      | ⬜ Not Run |
 | TC-10 | Case sensitivity in email/username uniqueness | Sign up with email of different case but same value, then test again with username with different case and same value. Submit each. |Rejected as duplicate; email and username uniqueness checks are case-insensitive. |      | ⬜ Not Run |
@@ -26,6 +26,7 @@
 | --- | ----------- | ------------------ | ------------------- | -------- | ------ |
 |BUG-01|Signup fails; AttributeError: module 'hashlib' has no attribute 'scrypt'|Submit signup form successfully|Expected: Successful account creation. Actual: 500 error/server crash|Critical; broken signup|Fixed by specifying method 'pbkdf2:sha256' for password hashing|
 |BUG-02|Signup successful with missing input in required fields|Submit signup form with missing email, then again with missing username and password|Expected: validation error returned. Actual: account created successfully with missing fields|High; allows incomplete accounts into the database|Fixed; verified via retest |
+|BUG-03|  Signup succeeds with passwords outside the 8–14 character range, and with passwords containing only letters or only numbers (no mixed requirement enforced)  | Submit signup with a password under 8 chars, over 14 chars, all-letters, or all-numbers | Expected: rejected with a validation error. Actual: account created successfully regardless of length or composition | Medium (weak passwords allowed, but fucntionality not blocked) | Open |
 
 ## Notes
 
