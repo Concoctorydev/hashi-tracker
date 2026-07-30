@@ -25,9 +25,9 @@
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="e.g. Jane Smith" required>
                     <label for="password">Enter password</label>
-                    <input type="password" id="password" name="password" placeholder="8-14 characters" required>
+                    <input type="password" id="password" name="password" placeholder="8-14 characters, needs 1 letter and 1 number" minlength="8" maxlength="14" required>
                     <label for="repeat-password">Re-enter password</label>
-                    <input type="password" id="repeat-password" name="repeat-password" placeholder="Re-enter password" required>
+                    <input type="password" id="repeat-password" name="repeat-password" placeholder="Re-enter password" minlength="8" maxlength="14" required>
                     <button type="submit" class="btn btn-signup">Sign up</button>
                 </form>
                 <p>Already have an account? <a href="login.html">Log in here</a></p>

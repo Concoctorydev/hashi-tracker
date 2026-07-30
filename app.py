@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import sqlite3
 from werkzeug.security import generate_password_hash
+import re
 
 app = Flask(__name__)
 
@@ -14,6 +15,12 @@ def signup():
 
         if not email or not username or not password or not repeat_password:
             return render_template('signup.html', error="All fields are required. Please go back and complete all fields.")
+
+        if len(password) < 8 or len(password) > 14:
+            return render_template('signup.html', error="Password must be between 8 and 14 characters.")
+
+        if not re.search(r'\d', password) or not re.search(r'[A-Za-z]', password):
+            return render_template('signup.html', error="Password must contain at least one letter and one number.")
 
         if password != repeat_password:
             return render_template('signup.html', error="Passwords do not match. Please go back and try again.")
