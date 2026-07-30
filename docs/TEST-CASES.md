@@ -9,7 +9,8 @@
 | TC-03 | Duplicate email          | Sign up with an email already registered, new username. Submit.                              | Error: "That email is already registered. Please go back and try again."     |Validation error returned with expected error message| ✅ Pass |
 | TC-04 | Duplicate username       | Sign up with a username already registered, new email. Submit.                               | Error: "That username is already taken. Please go back and try again."       |Validation error returned with expected error message| ✅ Pass |
 | TC-05 | Empty required field(s)  | Leave one or more fields blank. Submit.                                                      | Form should not submit / validation error shown.                             |Form submission fails with empty input fields, validation error returns| ✅ Pass |
-| TC-06 | Password stored securely | Complete a successful signup. Inspect `hashitracker.db` directly.                            | `password_hash` column contains a hashed value, not the plain-text password. |               | ⬜ Not Run |
+| TC-06 | Password stored securely | Complete a successful signup. Inspect `hashitracker.db` directly.                            | `password_hash` column contains a hashed value, not the plain-text password. |Confirmed password_hash column in users table contains properly hashed values.Verified via DB Browser.| ✅ Pass |
+**Note:** While verifying password hashing via DB Browser, leftover test rows from TC-02 found with empty data fields. Cleared with 'DELETE FROM users;'.
 
 ## Bug Log
 
