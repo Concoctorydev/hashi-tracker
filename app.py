@@ -12,6 +12,9 @@ def signup():
         password = request.form['password']
         repeat_password = request.form['repeat-password']
 
+        if not email or not username or not password or not repeat_password:
+            return "All fields are required. Please go back and complete all fields."
+
         if password != repeat_password:
             return "Passwords do not match. Please go back and try again."
 
