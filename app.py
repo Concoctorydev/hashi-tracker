@@ -15,7 +15,7 @@ def signup():
         if password != repeat_password:
             return "Passwords do not match. Please go back and try again."
 
-        password_hash = generate_password_hash(password)
+        password_hash = generate_password_hash(password, method='pbkdf2:sha256')
 
         conn = sqlite3.connect('hashitracker.db')
         cursor = conn.cursor()
