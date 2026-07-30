@@ -19,19 +19,15 @@ People managing Hashimoto's thyroiditis. Initial test user: developer's spouse
 - Local authentication (username + recovery key, no server)
 
 ## Architecture
-### V1 — PWA
-- **Platform:** React (Progressive Web App, mobile-first)
-- **Storage:** IndexedDB (local, on device)
-- **Auth:** Local username + recovery key, no backend
-- **Note:** No cloud sync — data stays on device
+### V1 — Web App (Flask)
+- **Platform:** HTML, CSS, Flask 
+- **Storage:** SQLite, stored on the server
+- **Auth:** Email + username + password, with email-based account recovery
+- **Note:** Data is stored server-side and supports multi-device access
 
-### V2 — Native
-- **Platform:** React Native / Expo (iOS and Android)
-- **Storage:** SQLite (local, on device)
-- **Auth:** Same local auth model, potential cloud sync option
 
 ## Version Roadmap
 - **V1** — Core logging (symptoms, lifestyle, dietary triggers, medications), local authentication, basic pattern view with visual indicators
 - **V1.1** — PDF report generation for provider visits
-- **V2** — React Native rebuild, SQLite, data visualization, deep trend analysis, correlation analysis
-- **V3** — Optional cloud sync, multi-device support
+- **V2** — Deeper trend analysis and correlation detection
+- **V3** — Further platform expansion (TBD)
