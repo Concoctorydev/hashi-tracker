@@ -11,6 +11,14 @@
 | TC-05 | Empty required field(s)  | Leave one or more fields blank. Submit.                                                      | Form should not submit / validation error shown.                             |Form submission fails with empty input fields, validation error returns| ✅ Pass |
 | TC-06 | Password stored securely | Complete a successful signup. Inspect `hashitracker.db` directly.                            | `password_hash` column contains a hashed value, not the plain-text password. |Confirmed password_hash column in users table contains properly hashed values.Verified via DB Browser.| ✅ Pass |
 **Note:** While verifying password hashing via DB Browser, leftover test rows from TC-02 found with empty data fields. Cleared with 'DELETE FROM users;'.
+| TC-07 | Password complexity requirements.  |Enter a password shorter than 8 characters, longer than 14 characters or one with no numbers/no letters. Submit. |  Error message indicating password requirements not met.    |      | ⬜ Not Run |
+| TC-08 | SQL injection attempt | Enter ' OR '1'='1 (or similar) in email/username/password fields. Submit. | Input treated as literal text; no unexpected database behavior, no error exposing SQL. |      | ⬜ Not Run |
+| TC-09 | Special characters / unicode input | Enter emoji or symbols (🎉, @, #) in username. Then separately test accented/non-Latin characters (é, 名前). Submit each. | Emoji/symbols rejected with a validation error. Accented and non-Latin characters accepted and stored correctly. |      | ⬜ Not Run |
+| TC-10 | Case sensitivity in email/username uniqueness | Sign up with email of different case but same value, then test again with username with different case and same value. Submit each. |Rejected as duplicate; email and username uniqueness checks are case-insensitive. |      | ⬜ Not Run |
+| TC-11 | Leading/trailing whitespace in fields | Enter username with spaces before and after, submit. Test again with email and password. Submit. | Whitespace is trimmed before storage; account created with username stored with no leading/trailing spaces. |      | ⬜ Not Run |
+| TC-12 | Invalid email format | Enter a malformed email (e.g. notanemail, missing@domain). Submit. | Error message indicating invalid email format. |      | ⬜ Not Run |
+| TC-13 | Cross-site scripting (XSS) attempt | Enter <script>alert('test')</script> in username. Submit. | Input treated as literal text when displayed anywhere; script does not execute. |      | ⬜ Not Run |
+
 
 ## Bug Log
 
