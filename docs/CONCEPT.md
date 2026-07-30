@@ -1,9 +1,9 @@
 # Hashi Tracker — App Concept Summary
 
 ## Concept
-A local-first symptom and lifestyle tracker for people managing Hashimoto's
-thyroiditis. Built from clinical insight with privacy and provider communication as
-core design principles.
+A symptom and lifestyle tracker for people managing Hashimoto's
+thyroiditis. Built from clinical insight with pattern detection as
+core design principle.
 
 ## Target User
 People managing Hashimoto's thyroiditis. Initial test user: developer's spouse
