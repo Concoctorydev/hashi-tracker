@@ -53,7 +53,7 @@ def signup():
         conn.commit()
         conn.close()
 
-        return f"Signed up: {username} ({email})"
+        return render_template('signup_success.html', username=username, email=email)
 
     return render_template('signup.html')
 
