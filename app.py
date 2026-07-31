@@ -25,6 +25,9 @@ def signup():
         if password != repeat_password:
             return render_template('signup.html', error="Passwords do not match. Please go back and try again.")
 
+        if not re.match(r'^[\w-]+$', username, re.UNICODE):
+            return render_template('signup.html', error="Username can only contain letters, numbers, hyphens, and underscores.")
+
         password_hash = generate_password_hash(password, method='pbkdf2:sha256')
 
         conn = sqlite3.connect('hashitracker.db')
