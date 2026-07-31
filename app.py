@@ -8,8 +8,8 @@ app = Flask(__name__)
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        email = request.form['email']
-        username = request.form['username']
+        email = request.form['email'].lower()
+        username = request.form['username'].lower()
         password = request.form['password']
         repeat_password = request.form['repeat-password']
 
