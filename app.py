@@ -16,6 +16,9 @@ def signup():
         if not email or not username or not password or not repeat_password:
             return render_template('signup.html', error="All fields are required. Please go back and complete all fields.")
 
+        if not re.match(r'^[^@\s]+@[^@\s]+\.[^@\s]+$', email):
+            return render_template('signup.html', error="Please enter a valid email address.")
+
         if len(password) < 8 or len(password) > 14:
             return render_template('signup.html', error="Password must be between 8 and 14 characters.")
 
