@@ -1,3 +1,34 @@
+# macOS
 .DS_Store
+
+# Node (if used)
 node_modules/
 build/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Database
+*.db
+
+# Editor
+.vscode/
+
+# Environment/secrets
+.env
+
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Flask
+instance/
+
+# Jupyter (if used)
+.ipynb_checkpoints/
