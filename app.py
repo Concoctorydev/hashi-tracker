@@ -8,10 +8,10 @@ app = Flask(__name__)
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        email = request.form['email'].lower()
-        username = request.form['username'].lower()
-        password = request.form['password']
-        repeat_password = request.form['repeat-password']
+        email = request.form['email'].lower().strip()
+        username = request.form['username'].lower().strip()
+        password = request.form['password'].strip()
+        repeat_password = request.form['repeat-password'].strip()
 
         if not email or not username or not password or not repeat_password:
             return render_template('signup.html', error="All fields are required. Please go back and complete all fields.")
