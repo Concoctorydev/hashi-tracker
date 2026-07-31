@@ -29,6 +29,7 @@
 |BUG-04 | No backend validation of email format; simple text was accepted as a valid email address when client-side attribute for `type="email"` was bypassed | Submit signup via curl with non-email format text string in the email input field | Expected: Error message for invalid email format. Actual: accepted and stored in database | Medium; data integrity issue, not a security vulnerablity | Open |
 |BUG-05 | Backend accepts emoji and symbols as valid username (`🎉, @, #`) | Submit signup via curl with emoji or symbols as username | Expected: Validation error with emoji and symbols. Actual: usernames accepted and stored as-is. | Low; data integrity issue | Fixed: retested with curl, validation errors returned, verified via direct database inspection. |
 |BUG-06| Email/username uniqueness checks are case-sensitive; `Jane@email.com` and`jane@email.com`, `JaneW` and `janew` are treated as separate accounts| Account registration attempted with the same email/username in a different letter case | Expected: rejected as duplicate email/username. Actual: both accepted as distinct accounts | Medium | Fixed: retested, case variant emails and usernames rejected and validation error returned for duplicate email/username|
+|BUG-07| Leading/trailing whitespace not trimmed from input fields; stored and displayed with spaces.| Submit signup with spaces before and after input values | Expected: whitespace trimmed before storage in database. Actual: whitespace preserved as-is | Low-medium; could create login mismatches | Open
 
 ## Notes
 
