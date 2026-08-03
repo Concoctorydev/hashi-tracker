@@ -32,3 +32,6 @@ instance/
 
 # Jupyter (if used)
 .ipynb_checkpoints/
+
+# environment variable
+.env

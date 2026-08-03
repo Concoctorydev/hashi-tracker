@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 import re
@@ -77,11 +77,13 @@ def login():
         if result is None:
             return render_template('login.html', error="Incorrect username or password")
 
-        stored_hash = result[0]
+        user_id, stored_hash = result
         if not check_password_hash(stored_hash, password):
             return render_template('login.html', error="Incorrect username or password")
 
+        session['user_id'] = user_id
         return redirect(url_for('home'))
+
 
     return render_template('login.html')
 
