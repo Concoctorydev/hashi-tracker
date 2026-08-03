@@ -98,9 +98,34 @@ def recovery():
 
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    user_id = session.get('user_id')
+    if user_id is None:
+        return redirect(url_for('login'))
 
+    conn = sqlite3.connect('hashitracker.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT username FROM users WHERE id = ?', (user_id,))
+    result = cursor.fetchone()
+    conn.close()
 
+    username = result[0]
+    return render_template('home.html', username=username)
+
+@app.route('/trends')
+def trends():
+    return render_template('trends.html')
+
+@app.route('/history')
+def history():
+    return render_template('history.html')
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/help')
+def help():
+    return render_template('help.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)

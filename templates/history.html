@@ -43,24 +43,24 @@
                 </form>
             </main>
             <nav class="bottom-nav">
-                <a href="home.html" class="nav-item">
-                    <img src="home.svg" alt="Home icon">
+                <a href="{{ url_for('home') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='home.svg') }}" alt="Home icon">
                     <span>Home</span>
                 </a>
-                <a href="trends.html" class="nav-item">
-                    <img src="trends.svg" alt="Trends icon">
+                <a href="{{ url_for('trends') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='trends.svg') }}" alt="Trends icon">
                     <span>Trends</span>
                 </a>
-                <a href="history.html" class="nav-item">
-                    <img src="history.svg" alt="History icon">
+                <a href="{{ url_for('history') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='history.svg') }}" alt="History icon">
                     <span>History</span>
                 </a>
-                <a href="profile.html" class="nav-item">
-                    <img src="profile.svg" alt="Profile icon">
+                <a href="{{ url_for('profile') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='profile.svg') }}" alt="Profile icon">
                     <span>Profile</span>
                 </a>
-                <a href="help.html" class="nav-item">
-                    <img src="help.svg" alt="Help icon">
+                <a href="{{ url_for('help') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='help.svg') }}" alt="Help icon">
                     <span>Help</span>
                 </a>
             </nav>

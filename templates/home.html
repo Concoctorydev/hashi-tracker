@@ -11,7 +11,7 @@
     <div class="page-background">
         <div class="page-content">
             <header>
-                <h1>Hi, Amanda!😘 Log your entries here.</h1>
+                <h1>Hi, {{ username }}! Log your entries here.</h1>
             </header>
             <main>
                 <form>
@@ -333,33 +333,28 @@
                             </div>
                     </details>
                     <button type="submit" class="btn">Submit</button>
-                    <button type="button" class="btn" disabled>
-                        Clear
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 1a5 5 0 00-5 5v3H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V11a2 2 0 00-2-2h-2V6a5 5 0 00-5-5zm3 8H9V6a3 3 0 016 0v3z"/>
-                        </svg>
-                    </button>
+                    <button type="button" class="btn">Clear</button>
                 </form>
             </main>
             <nav class="bottom-nav">
-                <a href="home.html" class="nav-item">
-                    <img src="home.svg" alt="Home icon">
+                <a href="{{ url_for('home') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='home.svg') }}" alt="Home icon">
                     <span>Home</span>
                 </a>
-                <a href="trends.html" class="nav-item">
-                    <img src="trends.svg" alt="Trends icon">
+                <a href="{{ url_for('trends') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='trends.svg') }}" alt="Trends icon">
                     <span>Trends</span>
                 </a>
-                <a href="history.html" class="nav-item">
-                    <img src="history.svg" alt="History icon">
+                <a href="{{ url_for('history') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='history.svg') }}" alt="History icon">
                     <span>History</span>
                 </a>
-                <a href="profile.html" class="nav-item">
-                    <img src="profile.svg" alt="Profile icon">
+                <a href="{{ url_for('profile') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='profile.svg') }}" alt="Profile icon">
                     <span>Profile</span>
                 </a>
-                <a href="help.html" class="nav-item">
-                    <img src="help.svg" alt="Help icon">
+                <a href="{{ url_for('help') }}" class="nav-item">
+                    <img src="{{ url_for('static', filename='help.svg') }}" alt="Help icon">
                     <span>Help</span>
                 </a>
             </nav>
