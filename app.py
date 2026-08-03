@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 import re
 
 app = Flask(__name__)
@@ -61,7 +61,39 @@ def signup():
 #login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        username = request.form['username'].lower().strip()
+        password = request.form['password'].strip()
+
+        if not username or not password:
+            return render_template('login.html', error="Please enter both username and password.")
+
+        conn = sqlite3.connect('hashitracker.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT password_hash FROM users WHERE username = ?',(username,))
+        result = cursor.fetchone()
+        conn.close()
+
+        if result is None:
+            return render_template('login.html', error="Incorrect username or password")
+
+        stored_hash = result[0]
+        if not check_password_hash(stored_hash, password):
+            return render_template('login.html', error="Incorrect username or password")
+
+        return redirect(url_for('home'))
+
     return render_template('login.html')
+
+@app.route('/recovery')
+def recovery():
+    return render_template('recovery.html')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)

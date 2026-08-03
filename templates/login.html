@@ -13,20 +13,48 @@
                 <h1>Log in to HashiTracker</h1>
             </header>
             <main>
-                <form>
+                <form action="/login" method="POST">
                     <p class="form-intro">Welcome back! Log in right here.</p>
+
+                    {% if error %}
+                    <p class="form-error">{{ error }}</p>
+                    {% endif %}
+
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="e.g. Jane Smith">
+                    <input type="text" id="username" name="username" placeholder="e.g. Jane Smith" required>
                     <label for="password">Enter password</label>
-                    <input type="password" id="password" name="password" placeholder="8-12 characters">
-                    <a href="home.html" class="btn btn-signup">Login</a>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="8-14 characters" required>
+                        <button type="button" class="toggle-password" data-target="password" aria-label="Show password">
+                            <img src="{{ url_for('static', filename='eye.svg') }}" alt="Show password">
+                        </button>
+                    </div>
+                    <button type="submit" class="btn btn-signup">Login</button>
                 </form>
-            <p>Forgot your password or username? <a href="recovery.html">Reset it here</a>
-            </p>
-            <p>Don't have an account yet? <a href="signup.html">Sign up here</a>
-            </p>
+            <p>Forgot your password or username? <a href="{{ url_for('recovery') }}">Reset it here</a></p>
+            <p>Don't have an account yet? <a href="{{ url_for('signup') }}">Sign up here</a></p>
             </main>
         </div>
     </div>
+    <script>
+    document.querySelectorAll('.toggle-password').forEach(button => {
+        const img = button.querySelector('img');
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const input = document.getElementById(targetId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                img.src = "{{ url_for('static', filename='eye-off.svg') }}";
+                img.alt = 'Hide password';
+                button.setAttribute('aria-label', 'Hide password');
+            } else {
+                input.type = 'password';
+                img.src = "{{ url_for('static', filename='eye.svg') }}";
+                img.alt = 'Show password';
+                button.setAttribute('aria-label', 'Show password');
+            }
+        });
+    });
+</script>
 </body>
 </html>
