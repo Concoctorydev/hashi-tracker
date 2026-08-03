@@ -2,8 +2,13 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 import re
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
+load_dotenv()
+app.secret_key = os.environ.get('SECRET_KEY')
+
 
 #signup 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -70,7 +75,7 @@ def login():
 
         conn = sqlite3.connect('hashitracker.db')
         cursor = conn.cursor()
-        cursor.execute('SELECT password_hash FROM users WHERE username = ?',(username,))
+        cursor.execute('SELECT id, password_hash FROM users WHERE username = ?', (username,))
         result = cursor.fetchone()
         conn.close()
 
