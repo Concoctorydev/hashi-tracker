@@ -5,6 +5,7 @@ import re
 
 app = Flask(__name__)
 
+#signup 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -57,6 +58,10 @@ def signup():
 
     return render_template('signup.html')
 
+#login
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
